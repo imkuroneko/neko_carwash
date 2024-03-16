@@ -32,23 +32,23 @@ CreateThread(function()
             event       = 'neko_carwash:client:wash_tier'..key,
             args        = { price = value.price, seconds = value.timeSeconds, clean = value.cleanLevel, washDecal = value.decal }
         })
+    end
 
+    lib.registerContext(MainMenu)
+
+    -- ===== Creación de eventos
+    for key, value in ipairs(Config.tiers) do
         RegisterNetEvent('neko_carwash:client:wash_tier'..key, function(data)
             if data.price > QBCore.Functions.GetPlayerData().money['cash'] then
                 lib.notify({ description = locale('not_enough_money'), type = 'error' })
             else
-                local levelToClean = data.clean
-                if GetVehicleDirtLevel(GetVehiclePedIsIn(PlayerPedId())) < levelToClean then
-                    levelToClean = (GetVehicleDirtLevel(GetVehiclePedIsIn(PlayerPedId())) - 0.75)
-                end
-
                 local progressParams = {
                     duration = (data.seconds * 1000),
                     label = locale('progress_loading'),
                     useWhileDead = false,
                     position = 'bottom',
-                    canCancel = true,
-                    disable = { car = true, move = true, combat = true }
+                    canCancel = false,
+                    disable = { car = true, move = true, combat = true },
                 }
 
                 CurrentlyWashing = true
@@ -66,8 +66,6 @@ CreateThread(function()
             end
         end)
     end
-
-    lib.registerContext(MainMenu)
 
     -- ===== creación de puntos
     for _, place in pairs(Config.places) do
