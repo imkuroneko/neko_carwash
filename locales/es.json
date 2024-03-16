@@ -1,0 +1,16 @@
+{
+    "menu_title"          : "Car Wash",
+    "tier_1__label"       : "Lavado básico ($%s)",
+    "tier_1__description" : "Lavado rápido para salvar de un apuro con agua y detergente.",
+    "tier_2__label"       : "Lavado intermedio ($%s)",
+    "tier_2__description" : "Lavado con insumos de buena calidad con mucha rapidez.",
+    "tier_3__label"       : "Lavado integral ($%s)",
+    "tier_3__description" : "Lavado con insumos de primera calidad y encerado de la chapería.",
+    "wash_tier_low"       : "No te puedo lavar el vehículo por el nivel de suciedad",
+    "press_to_wash"       : "Presiona [E] para lavar tu vehículo",
+    "not_enough_money"    : "No tienes suficiente dinero",
+    "progress_loading"    : "Lavando tu vehículo, por favor aguarda...",
+    "progress_success"    : "Tu vehículo se ve un poco mejor que antes...",
+    "progress_cancelled"  : "Ya no nos hagas perder tiempo!",
+    "debug_dirt_car"      : "Ensuciar vehículo"
+}
